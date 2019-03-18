@@ -1,0 +1,39 @@
+*
+  box-sizing: border-box
+body 
+  +regular300
+img 
+  max-width: 100%
+strong
+  +regular700
+
+.container
+  width: 1184px
+  margin: auto
+.section
+  padding: 100px 0
+  &-title
+    +regular400 
+    font-size: 48px
+  &-subtitle
+    +regular300 
+    font-size: 20px
+.input
+  padding: 16px 66px
+.button 
+  padding: 19px 55px
+  background-color: $button-color
+  border: none
+  &:hover
+    background-color: lighten($button-color, 10%)
+
+
+@media (max-width: 1200px)
+  .container
+    width: 740px
+@media (max-width: 768px)
+  .container
+    width: 540px
+@media (min-width: 320px) and (max-width: 567px)
+  .container
+    max-width: 275px

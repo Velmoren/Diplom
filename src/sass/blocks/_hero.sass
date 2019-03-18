@@ -1,0 +1,90 @@
+.hero
+  color: $white-color
+  background: url('../img/hero/hero-background.png') no-repeat center
+  &-box
+    display: flex
+    justify-content: space-between
+  &-text
+    flex-basis: 50%
+    margin-left: 14px
+    margin-top: 12px
+  &__title
+    margin-top: 0
+    margin-bottom: 32px
+    line-height: 60px
+  &__subtitle
+    margin-bottom: 59px
+  &-block
+    &__item
+      display: flex
+      align-items: center
+      margin-bottom: 20px
+    &__icon
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 37px
+      height: 37px
+      text-align: center
+      border: 1px solid $white-color
+      border-radius: 50%
+      +regular300 
+      font-size: 14px
+      margin-right: 26px
+    &__text
+      font-size: 15px
+      +regular300 
+  &-card
+    width: 370px
+    height: 429px
+    background-color: #fff
+    color: $main-black-color
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin-top: 25px
+    text-align: center
+    &__title
+      +regular400 
+      font-size: 18px
+      margin-top: 37px
+      margin-bottom: 28px
+  &-form
+    &__input
+      display: block
+      margin-bottom: 16px
+      text-align: center
+      +regular300 
+      font-size: 13px
+      margin-left: 3px
+    &__button
+      text-transform: uppercase
+      font-size: 16px
+      +semibold400
+      color: $white-color
+      margin-top: 3px
+@media (max-width: 1200px)
+  .hero
+    &__title
+      font-size: 30px
+      line-height: 40px
+    &-card
+      margin-top: 0
+@media (max-width: 768px)
+  .hero
+    background: url('../img/hero/hero-background.png') no-repeat center
+    background-size: cover
+    &-box
+      display: flex
+      flex-direction: column
+      align-items:  center
+    &__title
+      text-align: center
+    &__subtitle
+      text-align: center
+    &-text
+      display: flex
+      flex-direction: column
+      align-items:  center
+    &-card
+      margin-top: 50px
