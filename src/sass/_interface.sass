@@ -2,16 +2,27 @@
   box-sizing: border-box
 body 
   +regular300
+  color: $main-black-color
 img 
   max-width: 100%
 strong
   +regular700
-
+.line
+  width: 9px
+  height: 2px
+  background-color: $button-color 
+  margin-bottom: 5.5px
+  &-big 
+    width: 31px
+    height: 2px
+    background-color: $button-color
+    margin-left: auto
+    margin-right: auto
+    margin-bottom: 40px
 .container
-  width: 1184px
+  width: 1172px
   margin: auto
-.section
-  padding: 100px 0
+  position: relative
   &-title
     +regular400 
     font-size: 48px
@@ -20,13 +31,18 @@ strong
     font-size: 20px
 .input
   padding: 16px 66px
+  border: 1px solid $gray-color
+  &:focus
+    border: 1px solid $gray-color
 .button 
   padding: 21px 55px
   background-color: $button-color
+  text-transform: uppercase
+  color: $white-color
+  +semibold400
   border: none
   &:hover
     background-color: lighten($button-color, 10%)
-
 
 @media (max-width: 1200px)
   .container
@@ -36,4 +52,4 @@ strong
     width: 540px
 @media (min-width: 320px) and (max-width: 567px)
   .container
-    max-width: 275px
+    max-width: 320px

@@ -1,0 +1,154 @@
+.projects
+  background-color: #e8e8e8
+  padding-top: 88px
+  padding-bottom: 100px
+  &__title
+    text-align: center
+    font-size: 36px
+    +regular400 
+    margin-bottom: 26px
+  &__subtitle
+    text-align: center
+    font-size: 19px
+    letter-spacing: 0.2px
+    margin-left: 5px
+    margin-top: -4px
+    margin-bottom: 100px
+  &__button
+    font-size: 14px
+    padding: 21px 49px 21px 49px
+    margin-top: 64px
+    margin-left: -2px
+.slider
+  &__item
+    display: flex
+    width: 930px
+    margin-left: auto
+    margin-right: auto
+  &-image
+    flex-basis: 50%
+    margin-left: 15px
+  &-text
+    margin-left: 87px
+    flex-basis: 50%
+    &__title
+      font-size: 24px
+      +regular400 
+      margin-top: -3px
+    &__description
+      font-size: 12px
+      margin-top: 48px
+      +regular300 
+      &-text
+        margin-top: 11px
+        font-size: 16px
+        +regular300 
+    &__parametrs
+      display: flex
+      margin-top: 57px
+      &-scale
+        margin-right: 73px
+      &-size
+        margin-right: 73px
+        margin-left: 14px
+      &-date
+        margin-right: 2px
+      &-sm
+        margin-bottom: 11px
+        font-size: 12px
+        +regular300 
+        color: $primary-black-color
+      &-num
+        font-size: 16px
+        +regular300 
+        color: $main-black-color
+      & span
+        display: block
+.arrows
+  max-width: 20px
+  position: absolute
+  top: 65.4%
+  cursor: pointer
+  z-index: 1
+  &__left
+    left: 1px
+  &__right
+    right: 1px
+@media (max-width: 1200px)
+  .slider
+    &__item
+      width: 720px
+    &-image
+      width: 320px
+    &-text 
+      margin-left: 20px
+      &__description
+        margin-top: 33px
+        &-text
+          margin-top: 10px
+      &__parametrs
+        margin-top: 25px
+        &-scale
+          margin-right: 15px
+        &-size
+          margin-right: 15px
+  .projects
+    &__button
+      margin-top: 39px
+  .arrows
+    top: 100%
+    &__left
+      left: 40%
+    &__right
+      right: 40%
+@media (max-width: 768px)
+  .projects
+    &__title
+      margin-top: -50px
+      margin-bottom: 20px
+    &__subtitle
+      margin-top: -15px
+      margin-bottom: 35px
+      margin-left: auto
+      margin-right: auto
+      max-width: 350px
+      font-size: 17px
+  .slider
+    &__item
+      max-width: 320px
+      flex-direction: column
+      text-align: center
+    &-image
+      margin-left: 0
+    &-text
+      margin-left: 0
+      &__title
+        margin-top: 25px
+      &__parametrs
+        justify-content: space-between
+  .arrows
+    top: 55%
+    &__left
+      left: 10%
+    &__right
+      right: 10%
+@media (min-width: 320px) and (max-width: 567px)
+  .projects
+    &__title
+      font-size: 26px
+    &__subtitle
+      max-width: 300px
+  .arrows
+    top: 59%
+    &__left
+      left: 10%
+    &__right
+      right: 10%
+
+
+  
+    
+
+
+
+  
