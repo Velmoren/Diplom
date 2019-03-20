@@ -17,9 +17,9 @@
     letter-spacing: 0.4px
     +regular400 
   &__subtitle
-    margin-bottom: 59px
+    margin-bottom: 60px
     font-size: 20px
-    letter-spacing: -0.4px
+    +regular300 
   &-block
     &__item
       display: flex
@@ -39,6 +39,7 @@
       margin-right: 26px
     &__text
       font-size: 15px
+      letter-spacing: -0.05px
       +regular300 
   &-card
     width: 370px
@@ -55,15 +56,16 @@
       font-size: 18px
       margin-top: 37px
       margin-bottom: 28px
+      line-height: 21px
+      letter-spacing: 0.2px
   &-form
     &__input
       display: block
-      margin-bottom: 16px
+      margin-bottom: 17px
       text-align: center
-      padding: 16px 70px 16px 65px
+      padding: 16px 63px 16px 64px
       +regular300 
       font-size: 13px
-      margin-left: 3px
     &__button
       font-size: 16px
       margin-top: 3px
@@ -98,6 +100,7 @@
       margin-top: 50px
 @media (min-width: 320px) and (max-width: 567px)
   .hero
+    padding-bottom: 0
     &__title
       font-size: 24px
       line-height: 30px

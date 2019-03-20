@@ -1,0 +1,117 @@
+.advantages
+  background: url("../img/advantages/1.png") no-repeat center
+  background-color: black
+  padding-top: 86px
+  padding-bottom: 38px
+  &__title
+    +regular400 
+    font-size: 24px
+    line-height: 31px
+    color: $white-color
+    width: 680px
+    text-align: center
+    margin-left: auto
+    margin-right: auto
+    margin-bottom: 94px
+    letter-spacing: 0.13px
+  &-card
+    width: 280px
+    text-align: center
+    margin-bottom: 69px
+    &:first-child .advantages__image
+      margin-bottom: 18px
+      margin-left: -20px
+    &:first-child .advantages__text
+      margin-left: -16px
+    &:nth-child(2) .advantages__image
+      margin-bottom: 16px
+      margin-left: -8px
+    &:nth-child(2) .advantages__text
+      margin-left: -3px
+    &:nth-child(3) .advantages__image
+      margin-top: 10px
+      margin-bottom: 18px
+      margin-left: 9px
+    &:nth-child(3) .advantages__text
+      margin-left: 12px
+    &:nth-child(4) .advantages__image
+      margin-bottom: 16px
+      margin-left: 22px
+    &:nth-child(4) .advantages__text
+      margin-left: 26px
+    &:nth-child(5) .advantages__image
+      margin-bottom: 16px
+      margin-left: -25px
+    &:nth-child(5) .advantages__text
+      margin-left: -16px
+    &:nth-child(6) .advantages__image
+      margin-bottom: 15px
+      margin-left: -5px
+    &:nth-child(6) .advantages__text
+      margin-left: -2px
+    &:nth-child(7) .advantages__image
+      margin-bottom: 14px
+      margin-left: 3px
+    &:nth-child(7) .advantages__text
+      margin-left: 10px
+    &:last-child .advantages__image
+      margin-bottom: 18px
+      margin-left: 23px
+    &:last-child .advantages__text
+      margin-left: 24px
+    &s
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-around
+  &__image
+  &__text
+    +regular300 
+    font-size: 15px
+    line-height: 20px
+    color: $white-color
+@media (max-width: 768px)
+  .advantages
+    &__title
+      width: 540px
+      font-size: 18px
+      margin-top: -40px
+      margin-bottom: 50px
+    &-card
+    &:first-child .advantages__image
+      margin-left: 0px
+    &:first-child .advantages__text
+      margin-left: 0px
+    &:nth-child(2) .advantages__image
+      margin-left: 0px
+    &:nth-child(2) .advantages__text
+      margin-left: 0px
+    &:nth-child(3) .advantages__image
+      margin-left: 0px
+    &:nth-child(3) .advantages__text
+      margin-left: 0px
+    &:nth-child(4) .advantages__image
+      margin-left: 0px
+    &:nth-child(4) .advantages__text
+      margin-left: 0px
+    &:nth-child(5) .advantages__image
+      margin-left: 0px
+    &:nth-child(5) .advantages__text
+      margin-left: 0px
+    &:nth-child(6) .advantages__image
+      margin-left: 0px
+    &:nth-child(6) .advantages__text
+      margin-left: 0px
+    &:nth-child(7) .advantages__image
+      margin-left: 0px
+    &:nth-child(7) .advantages__text
+      margin-left: 0px
+    &:last-child .advantages__image
+      margin-left: 0px
+    &:last-child .advantages__text
+      margin-left: 0px
+@media (min-width: 320px) and (max-width: 567px)
+  .advantages
+    &__title
+      width: 300px
+    &-card
+      margin-bottom: 30px

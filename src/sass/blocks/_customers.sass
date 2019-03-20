@@ -1,0 +1,79 @@
+.customers
+  padding-top: 83px
+  padding-bottom: 100px
+  &-box
+    max-width: 980px
+    margin-left: auto
+    margin-right: auto
+  &-slider
+    display: flex
+    &__item
+      width: 170px
+      height: 85px
+      display: flex
+      align-items: center
+      justify-content: center
+  &__title
+    +regular400 
+    font-size: 24px
+    line-height: 22px
+    width: 165px
+    text-align: center
+    margin-left: auto
+    margin-right: auto
+    margin-bottom: 95px
+    letter-spacing: 0.2px
+  &__arrow
+    &-left
+      top: 75.5%
+    &-right
+      top: 75.5%
+.owl-carousel .owl-item img
+  width: auto !important
+@media (max-width: 1200px)
+  .customers
+    &-box
+      max-width: 690px
+    &__arrow
+      &-left
+        top: 68%
+        left: -10%
+      &-right
+        top: 68%
+        right: -10%
+@media (max-width: 992px)
+  .owl-carousel.owl-drag .owl-item
+    display: flex
+    justify-content: center
+  .customers
+    &__title
+      margin-top: -20px
+      margin-bottom: 30px
+    &-box
+      max-width: 515px
+    &__arrow
+      &-left
+        top: 52%
+        left: 10%
+      &-right
+        top: 52%
+        right: 10%
+@media (max-width: 768px)
+  .customers
+    &__arrow
+      &-left
+        top: 100%
+        left: 40%
+      &-right
+        top: 100%
+        right: 40%
+@media (min-width: 320px) and (max-width: 567px)
+  .customers
+    &__arrow
+      &-left
+        top: 53%
+        left: 13%
+      &-right
+        top: 53%
+        right: 13%
+

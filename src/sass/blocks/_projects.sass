@@ -1,7 +1,7 @@
 .projects
   background-color: #e8e8e8
-  padding-top: 88px
-  padding-bottom: 100px
+  padding-top: 90px
+  padding-bottom: 64px
   &__title
     text-align: center
     font-size: 36px
@@ -9,24 +9,28 @@
     margin-bottom: 26px
   &__subtitle
     text-align: center
-    font-size: 19px
-    letter-spacing: 0.2px
+    font-size: 20px
     margin-left: 5px
     margin-top: -4px
-    margin-bottom: 100px
+    margin-bottom: 97px
   &__button
     font-size: 14px
-    padding: 21px 49px 21px 49px
+    padding: 21px 49px 21px 50px
     margin-top: 64px
     margin-left: -2px
 .slider
+  &__wraps
+    display: flex
+    width: 930px
   &__item
     display: flex
     width: 930px
     margin-left: auto
     margin-right: auto
   &-image
-    flex-basis: 50%
+    max-width: 409px
+    max-height: 340px
+    flex-basis: 49%
     margin-left: 15px
   &-text
     margin-left: 87px
@@ -37,7 +41,7 @@
       margin-top: -3px
     &__description
       font-size: 12px
-      margin-top: 48px
+      margin-top: 50px
       +regular300 
       &-text
         margin-top: 11px
@@ -45,9 +49,9 @@
         +regular300 
     &__parametrs
       display: flex
-      margin-top: 57px
+      margin-top: 59px
       &-scale
-        margin-right: 73px
+        margin-right: 74px
       &-size
         margin-right: 73px
         margin-left: 14px
@@ -67,11 +71,11 @@
 .arrows
   max-width: 20px
   position: absolute
-  top: 65.4%
+  top: 65.7%
   cursor: pointer
   z-index: 1
   &__left
-    left: 1px
+    left: 3px
   &__right
     right: 1px
 @media (max-width: 1200px)
@@ -114,6 +118,9 @@
       max-width: 350px
       font-size: 17px
   .slider
+    &__wraps
+      width: 320px
+      flex-direction: column
     &__item
       max-width: 320px
       flex-direction: column
