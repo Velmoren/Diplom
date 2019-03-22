@@ -1,0 +1,46 @@
+.footer
+  background-color: $main-black-color
+  padding-top: 55px
+  padding-bottom: 60px
+  &-block
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &-adress
+    display: flex
+    &__icon
+      width: 27px
+      height: 27px
+      display: flex
+      justify-content: center
+      align-items: center
+    &__text
+      margin-left: 12px
+      margin-top: -3px
+      line-height: 16px
+      & a
+        color: $white-color
+        +regular300 
+        font-size: 13px;
+        text-decoration: none
+        letter-spacing: -0.05px
+  &-contacts
+    margin-top: -11px
+    margin-right: 2px
+    line-height: 23px
+    &__phone
+      color: $white-color
+    &__link
+      letter-spacing: -0.4px
+      
+@media (min-width: 320px) and (max-width: 567px)
+  .footer
+    padding-top: 30px
+    padding-bottom: 30px
+    &-adress
+      width: 160px
+    &-contacts
+      &__phone
+        font-size: 14px
+      &__link 
+        font-size: 12px

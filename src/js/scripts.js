@@ -1,3 +1,4 @@
+/* параметры слайдера секции progects */
 $(document).ready(function () {
   $('.arrows__right').click(function () {
     $('#slider-1').trigger('next.owl.carousel', [1000]);
@@ -25,6 +26,8 @@ $(document).ready(function () {
       }
     }
   });
+
+  /* параметры слайдера секции customers */
   $('.arrows__right').click(function () {
     $('#slider-2').trigger('next.owl.carousel', [1000]);
   });
@@ -60,36 +63,13 @@ $(document).ready(function () {
       }
     }
   });
+  /* скрипт делает верхнее фото из двух прозрачным со скоростью 800 MS */
+  $('.layouts-card').hover(
+    function() {
+      $(this).find('img.nocolor').stop().animate({ 'opacity': '0' }, 800);
+  },
+    function() {
+      $(this).find('img.nocolor').stop().animate({ 'opacity': '1' }, 800);
+  });
+
 });
-// $(document).ready(function () {
-//   $('.slider').slick({
-//     slidesToShow: 1,
-//     slidesToScroll: 1,
-//     // autoplay: true,
-//     // autoplaySpeed: 4000,
-//     prevArrow: $('.arrows__left'),
-//     nextArrow: $('.arrows__right'),
-//     responsive: [{
-//         breakpoint: 1200,
-//         settings: {
-//           slidesToShow: 1,
-//           slidesToScroll: 1
-//         }
-//       },
-//       {
-//         breakpoint: 768,
-//         settings: {
-//           slidesToShow: 2,
-//           slidesToScroll: 1
-//         }
-//       },
-//       {
-//         breakpoint: 580,
-//         settings: {
-//           slidesToShow: 1,
-//           slidesToScroll: 1
-//         }
-//       }
-//     ]
-//   });
-// });

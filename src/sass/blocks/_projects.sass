@@ -1,12 +1,21 @@
 .projects
   background-color: #e8e8e8
-  padding-top: 90px
-  padding-bottom: 64px
+  padding-top: 60px
+  padding-bottom: 81px
   &__title
     text-align: center
     font-size: 36px
     +regular400 
-    margin-bottom: 26px
+    margin-bottom: 41px
+    &:after
+      display: block
+      content: ""
+      background-color: $button-color
+      width: 30px
+      height: 2px
+      margin-left: auto
+      margin-right: auto
+      margin-top: 25px
   &__subtitle
     text-align: center
     font-size: 20px
@@ -15,7 +24,7 @@
     margin-bottom: 97px
   &__button
     font-size: 14px
-    padding: 21px 49px 21px 50px
+    padding: 21px 48px 21px 50px
     margin-top: 64px
     margin-left: -2px
 .slider
@@ -28,13 +37,14 @@
     margin-left: auto
     margin-right: auto
   &-image
-    max-width: 409px
-    max-height: 340px
+    width: 409px
+    height: 340px
     flex-basis: 49%
     margin-left: 15px
   &-text
-    margin-left: 87px
+    margin-left: 84px
     flex-basis: 50%
+    height: 340px
     &__title
       font-size: 24px
       +regular400 
@@ -97,19 +107,28 @@
         &-size
           margin-right: 15px
   .projects
+    &__subtitle
+      margin-bottom: 40px
     &__button
       margin-top: 39px
   .arrows
-    top: 100%
+    top: 65%
     &__left
-      left: 40%
+      left: -15%
     &__right
-      right: 40%
+      right: -15%
+@media (max-width: 992px)
+  .arrows
+    top: 65%
+    &__left
+      left: 0%
+    &__right
+      right: 0%
+
 @media (max-width: 768px)
   .projects
     &__title
-      margin-top: -50px
-      margin-bottom: 20px
+      margin-bottom: 40px
     &__subtitle
       margin-top: -15px
       margin-bottom: 35px
@@ -120,11 +139,15 @@
   .slider
     &__wraps
       width: 320px
+      height: 680px
       flex-direction: column
+      align-items: center
     &__item
-      max-width: 320px
+      width: 340px
       flex-direction: column
       text-align: center
+      margin-left: 0
+      margin-right: 0
     &-image
       margin-left: 0
     &-text
@@ -140,13 +163,31 @@
     &__right
       right: 10%
 @media (min-width: 320px) and (max-width: 567px)
+  .slider
+    &__item
+      height: 560px
+    &-image
+      width: 275px
+      flex-basis: 35%
+    &-text
+      width: 275px
+      &__parametrs
+        &-scale
+          margin-right: 0
+          margin-left: 0
+        &-size
+          margin-right: 0
+          margin-left: 0
+        &-date
+          margin-right: 0
+          margin-left: 0
   .projects
     &__title
       font-size: 26px
     &__subtitle
       max-width: 300px
   .arrows
-    top: 59%
+    top: 57%
     &__left
       left: 10%
     &__right

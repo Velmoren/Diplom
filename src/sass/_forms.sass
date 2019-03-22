@@ -1,0 +1,89 @@
+.window-of-thanks__hero
+  width: 250px
+  height: 100px
+  font-size: 24px
+  display: none
+  color: $main-black-color
+  margin-top: 50px
+.window-of-thanks__feedback
+  text-align: center
+  width: 250px
+  height: 100px
+  font-size: 24px
+  display: none
+  color: $main-black-color
+  margin-top: 50px
+.window-of-thanks__request
+  text-align: center
+  width: 250px
+  height: 100px
+  font-size: 24px
+  display: none
+  color: $main-black-color
+  margin-top: 50px 
+.invalid
+  border: 1px solid black
+form
+  &.hero
+    &-form
+      &>div 
+        &.valid
+          border: none
+          color: green
+          margin-top: -50px !important
+          margin-left: -35px !important
+        &.invalid
+          border: none
+          position: absolute
+          font-size: 20px
+          text-align: right
+          margin-top: -50px
+          margin-left: -25px
+  &.feedback
+    &-form 
+      &>div
+        &#feedback-name
+          &-error
+            &.invalid
+              border: none
+              position: absolute
+              font-size: 20px
+              text-align: right
+              margin-top: 15px
+              margin-left: -140px
+        &#feedback-phone
+          &-error
+            border: none
+            position: absolute
+            font-size: 20px
+            text-align: right
+            margin-top: 70px
+            margin-left: -140px
+  &.request
+    &-form 
+      &>div
+        &#request-name
+          &-error
+            &.invalid
+              border: none
+              position: absolute
+              font-size: 20px
+              text-align: right
+              margin-top: 15px
+              margin-left: -140px
+        &#request-phone
+          &-error
+            border: none
+            position: absolute
+            font-size: 20px
+            text-align: right
+            margin-top: 70px
+            margin-left: -140px
+        &#request-email
+          &-error
+            border: none
+            position: absolute
+            font-size: 20px
+            text-align: right
+            margin-top: 130px
+            margin-left: -140px

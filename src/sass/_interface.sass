@@ -7,18 +7,6 @@ img
   max-width: 100%
 strong
   +regular700
-.line
-  width: 9px
-  height: 2px
-  background-color: $button-color 
-  margin-bottom: 7px
-  &-big 
-    width: 31px
-    height: 2px
-    background-color: $button-color
-    margin-left: auto
-    margin-right: auto
-    margin-bottom: 40px
 .container
   width: 1172px
   margin: auto
@@ -32,6 +20,7 @@ strong
 .input
   padding: 16px 66px
   border: 1px solid $gray-color
+  outline: none
   &:focus
     border: 1px solid $gray-color
 .button 
@@ -41,11 +30,53 @@ strong
   color: $white-color
   +semibold400
   border: none
+  cursor: pointer
   &:hover
     background-color: lighten($button-color, 10%)
+  &:focus
+    outline: none
+  &:active
+    outline: none
+.contacts
+  display: flex
+  flex-direction: column
+  align-items: flex-end
+  &-phone
+    font-size: 18px
+    +regular700
+    text-decoration: none
+    cursor: pointer
+  &-link
+    font-size: 14px
+    +regular400 
+    color: $link-color
+    text-decoration: none
+    cursor: pointer
+    display: inline-block
+    position: relative
+    &:after
+      display: block
+      content: ""
+      background-color: $link-color
+      height: 1px
+      width: 0%
+      left: 50%
+      position: absolute
+      -webkit-transition: width .3s ease-in-out
+      -moz--transition: width .3s ease-in-out
+      transition: width .3s ease-in-out
+      -webkit-transform: translateX(-50%)
+      -moz-transform: translateX(-50%)
+      transform: translateX(-50%)
+    &:hover:after,
+    &:focus:after
+      width: 100%
 @media (max-width: 1200px)
   .container
     width: 740px
+  .button 
+    &:hover
+      background-color: $button-color
 @media (max-width: 768px)
   .container
     width: 540px

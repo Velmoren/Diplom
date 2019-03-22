@@ -28,7 +28,7 @@ gulp.task('htmlmin', function () {
 gulp.task('tinypng', function () {
   return gulp.src('./src/img/**/*.{png,jpg,jpeg}')
     .pipe(tinyPNG({
-      key: '0HCZCVkCCHY5cXghPRfvpF1nlJlb4WqX'
+      key: 'jKt5GB1c58BFfdX8QD1KfDwjg8LNSTDZ'
     }))
     .pipe(gulp.dest('dist/img/'));
 });
@@ -60,6 +60,6 @@ gulp.task('fonts', function () {
     .pipe(gulp.dest('dist/fonts/'));
 });
 
-gulp.task('default', gulp.parallel('minify-css', 'htmlmin', 'tinypng', 'move-js', 'guglify', function (done) {
+gulp.task('default', gulp.parallel('minify-css', 'htmlmin', 'tinypng', 'move-js', 'guglify','fonts', function (done) {
   done();
 }));

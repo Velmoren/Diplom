@@ -1,16 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+  <!-- подключаем стили одним скомпилированым фалом -->
   <link rel="stylesheet" href="css/style.css">
+
   <title>Дипломный проект WebStart</title>
+
+  <!-- Yandex.Metrika counter -->
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () {
+        (m[i].a = m[i].a || []).push(arguments)
+      };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k,
+        a)
+    })(window, document, "script", "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js", "ym");
+    ym(52919680, "init", {
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true,
+      webvisor: true,
+      trackHash: true
+    });
+  </script>
+
 </head>
 
 <body>
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/52919680" style="position:absolute; left:-9999px;" alt="метрика" /></div>
+  </noscript> <!-- /Yandex.Metrika counter -->
+
   <nav>
     <div class="container">
       <div class="navbar-block">
@@ -25,18 +51,18 @@
             <div class="menu-box__text menu__icon">MENU</div>
           </div>
           <!-- /.menu-box -->
-          <div class="menu__links">
-            <a href="#" class="menu__links-item">Главная</a>
-            <a href="#" class="menu__links-item">Виды макетов</a>
-            <a href="#" class="menu__links-item">Комплектация макетов</a>
-            <a href="#" class="menu__links-item">Реализованные проекты</a>
-            <a href="#" class="menu__links-item">Наши клиенты</a>
-            <a href="#" class="menu__links-item">Контакты</a>
+          <div class="menu__links" id="menu-links">
+            <a href="#top-anchor" class="menu__links-item">Главная</a>
+            <a href="#type-anchor" class="menu__links-item">Виды макетов</a>
+            <a href="#procurement-anchor" class="menu__links-item">Комплектация макетов</a>
+            <a href="#projects-end-anchor" class="menu__links-item">Реализованные проекты</a>
+            <a href="#our-customers-anchor" class="menu__links-item">Наши клиенты</a>
+            <a href="#our-contacts-anchor" class="menu__links-item" id="link-contacts">Контакты</a>
           </div>
         </div>
-        <div class="navbar-contacts">
-          <a href="tel:88008913333" class="navbar-contacts__phone">8 800 891-33-33</a>
-          <a href="#" class="navbar-contacts__link">Заказать обратный звонок</a>
+        <div class="navbar-contacts contacts">
+          <a href="tel:88008913333" class="navbar-contacts__phone contacts-phone">8 800 891-33-33</a>
+          <a href="#" class="navbar-contacts__link contacts-link btn-open-feedback">Заказать обратный звонок</a>
         </div>
         <!-- /.navbar-contacts -->
       </div>
@@ -44,11 +70,14 @@
     </div>
     <!-- /.container -->
   </nav>
-  <section class="section hero">
+
+  <a id="top-anchor"></a>
+
+  <header class="section hero">
     <div class="container">
       <div class="hero-box">
         <div class="hero-text">
-          <h1 class="section-title hero__title">Изготовление макетов любой сложности</h1>
+          <h1 class="section-title hero__title"> Изготовление макетов любой сложности</h1>
           <!-- /.section-title hero-title -->
           <h2 class="section-subtitle hero__subtitle">Продажи. Инвестиции. Имидж.</h2>
           <!-- /.section-subtitle hero-subtitle -->
@@ -64,13 +93,13 @@
             </div>
             <!-- /.hero-block__item -->
             <div class="hero-block__item">
-              <div class="hero-block__icon"><img src="img/hero/hero-icon-3.png" alt=""></div>
+              <div class="hero-block__icon"><img src="img/hero/hero-icon-3.png" alt="иконка"></div>
               <div class="hero-block__text"><span>Проектируем, изготавливаем,<br> доставляем и устанавливаем</span>
               </div>
             </div>
             <!-- /.hero-block__item -->
             <div class="hero-block__item">
-              <div class="hero-block__icon"><img src="img/hero/hero-icon-4.png" alt=""></div>
+              <div class="hero-block__icon"><img src="img/hero/hero-icon-4.png" alt="иконка"></div>
               <div class="hero-block__text"><span>Застрахуем, доставим<br> и установим</span></div>
             </div>
             <!-- /.hero-block__item -->
@@ -81,153 +110,151 @@
         <div class="hero-card">
           <p class="hero-card__title">Оставьте заявку и получите<br> расчет стоимость макета<br> в течение <strong>30
               минут</strong></p>
-          <form action="#" class="hero-form">
-            <input type="text" name="name" class="input hero-form__input" placeholder="Ваше имя">
-            <input type="text" name="phone" class="input hero-form__input" placeholder="Контактный телефон">
-            <input type="text" name="email" class="input hero-form__input" placeholder="Электронная почта">
+          <form action="#" method="POST" class="form hero-form" id="hero-form">
+            <input type="text" name="name" class="input hero-form__input" id="hero-name" required
+              placeholder="Ваше имя">
+            <input type="tel" name="phone" class="input hero-form__input phone" id="hero-phone" required
+              placeholder="Контактный телефон">
+            <input type="email" name="email" class="input hero-form__input" id="hero-email" required
+              placeholder="Электронная почта">
             <button class="button hero-form__button">Оставить заявку</button>
           </form>
+          <div class="window-of-thanks__hero">
+            Спасибо за заявку!<br> Мы перезваним вам в ближайшее время!
+          </div>
+          <!-- /.window-of-thanks -->
         </div>
         <!-- /.hero-form -->
       </div>
       <!-- /.hero-box -->
     </div>
     <!-- /.container -->
-  </section>
+    <a id="type-anchor"></a>
+  </header>
   <!-- /.section hero -->
+
   <section class="section layouts">
     <div class="container">
-      <h1 class="section-title layouts__title">Виды макетов</h1>
+      <h2 class="section-title layouts__title"> Виды макетов</h2>
       <!-- /.section-title layouts__title -->
-      <div class="line-big"></div>
       <h2 class="section-subtitle layouts__subtitle">Создаем макеты от небольших домов до космических станций</h2>
       <!-- /.section-subtitle layouts__subtitle -->
       <div class="layouts-cards">
-        <div class="layouts-card">
+        <div class="layouts-card darken">
           <span class="layouts-card__title">Архитектурные макеты</span>
           <!-- /.layouts-card__title -->
-          <div class="layouts-card__image"><img src="img/layouts/layouts-image-color-1.jpg" alt=""></div>
+          <div class="layouts-card__image layouts-card__image-first">
+            <img src="img/layouts/layouts-image-color-1.jpg" alt="цветная картинка" class="color">
+            <img src="img/layouts/layouts-image-1.jpg" alt="обесцвеченая картинка" class="nocolor">
+          </div>
           <!-- /.layouts-card__image -->
           <div class="layouts-card__text">
             <span class="layouts-card__span">Многоэтажные дома</span>
-            <div class="line"></div>
             <span class="layouts-card__span">Жилые комплексы</span>
-            <div class="line"></div>
             <span class="layouts-card__span">Коттеджные поселки</span>
-            <div class="line"></div>
             <span class="layouts-card__span">Торговые комплексы</span>
-            <div class="line"></div>
             <span class="layouts-card__span">Бизнес – парки</span>
-            <div class="line"></div>
             <span class="layouts-card__span">Административные здания</span>
-            <div class="line"></div>
             <span class="layouts-card__span">Гостиницы и санатории</span>
           </div>
           <!-- /.layouts-card__text -->
-          <button class="layouts-card__button">Рассчитать стоимость</button>
+          <button class="layouts-card__button btn-open-request">Рассчитать стоимость</button>
           <!-- /.layouts-card__button -->
         </div>
         <!-- /.layouts-card -->
         <div class="layouts-card">
           <span class="layouts-card__title">Градостроительные макеты</span>
           <!-- /.layouts-card__title -->
-          <div class="layouts-card__image"><img src="img/layouts/layouts-image-color-2.jpg" alt=""></div>
+          <div class="layouts-card__image layouts-card__image-second">
+            <img src="img/layouts/layouts-image-color-2.jpg" alt="цветная картинка" class="color">
+            <img src="img/layouts/layouts-image-2.jpg" alt="обесцвеченая картинка" class="nocolor">
+          </div>
           <!-- /.layouts-card__image -->
           <div class="layouts-card__text">
             <span class="layouts-card__span">Области</span>
-            <div class="line"></div>
             <span class="layouts-card__span">Города</span>
-            <div class="line"></div>
             <span class="layouts-card__span">Районы</span>
-            <div class="line"></div>
             <span class="layouts-card__span">Микрорайоны</span>
-            <div class="line"></div>
             <span class="layouts-card__span">Территории</span>
-            <div class="line"></div>
             <span class="layouts-card__span">Мосты и тоннели</span>
           </div>
           <!-- /.layouts-card__text -->
-          <button class="layouts-card__button">Рассчитать стоимость</button>
+          <button class="layouts-card__button btn-open-request">Рассчитать стоимость</button>
           <!-- /.layouts-card__button -->
         </div>
         <!-- /.layouts-card -->
         <div class="layouts-card">
           <span class="layouts-card__title">Промышленные макеты</span>
           <!-- /.layouts-card__title -->
-          <div class="layouts-card__image"><img src="img/layouts/layouts-image-color-3.png" alt=""></div>
+          <div class="layouts-card__image layouts-card__image-third">
+            <img src="img/layouts/layouts-image-color-3.jpg" alt="цветная картинка" class="color">
+            <img src="img/layouts/layouts-image-3.jpg" alt="обесцвеченая картинка" class="nocolor">
+          </div>
           <!-- /.layouts-card__image -->
           <div class="layouts-card__text">
             <span class="layouts-card__span">Предприятия и фабрики</span>
-            <div class="line"></div>
             <span class="layouts-card__span">Энергетические объекты</span>
-            <div class="line"></div>
             <span class="layouts-card__span">Заводы</span>
-            <div class="line"></div>
             <span class="layouts-card__span">Научные центры</span>
-            <div class="line"></div>
             <span class="layouts-card__span">Трубопроводы</span>
-            <div class="line"></div>
             <span class="layouts-card__span">Производственные линии</span>
-            <div class="line"></div>
             <span class="layouts-card__span">Технологические линии</span>
           </div>
           <!-- /.layouts-card__text -->
-          <button class="layouts-card__button">Рассчитать стоимость</button>
+          <button class="layouts-card__button btn-open-request">Рассчитать стоимость</button>
           <!-- /.layouts-card__button -->
         </div>
         <!-- /.layouts-card -->
         <div class="layouts-card">
           <span class="layouts-card__title">Интерьерные макеты</span>
           <!-- /.layouts-card__title -->
-          <div class="layouts-card__image"><img src="img/layouts/layouts-image-color-4.jpg" alt=""></div>
+          <div class="layouts-card__image layouts-card__image-fourth">
+            <img src="img/layouts/layouts-image-color-4.jpg" alt="цветная картинка" class="color">
+            <img src="img/layouts/layouts-image-4.jpg" alt="обесцвеченая картинка" class="nocolor">
+          </div>
           <!-- /.layouts-card__image -->
           <div class="layouts-card__text">
             <span class="layouts-card__span">Квартиры</span>
-            <div class="line"></div>
             <span class="layouts-card__span">Офисы</span>
-            <div class="line"></div>
             <span class="layouts-card__span">Коттеджи</span>
-            <div class="line"></div>
             <span class="layouts-card__span">Магазины</span>
-            <div class="line"></div>
             <span class="layouts-card__span">Спортивные комплексы</span>
-            <div class="line"></div>
             <span class="layouts-card__span">Торговые центры</span>
-            <div class="line"></div>
             <span class="layouts-card__span">Заводы</span>
           </div>
           <!-- /.layouts-card__text -->
-          <button class="layouts-card__button">Рассчитать стоимость</button>
+          <button class="layouts-card__button btn-open-request">Рассчитать стоимость</button>
           <!-- /.layouts-card__button -->
         </div>
         <!-- /.layouts-card -->
         <div class="layouts-card">
           <span class="layouts-card__title">Ландшафтные макеты</span>
           <!-- /.layouts-card__title -->
-          <div class="layouts-card__image"><img src="img/layouts/layouts-image-color-5.jpg" alt=""></div>
+          <div class="layouts-card__image layouts-card__image-fifth">
+            <img src="img/layouts/layouts-image-color-5.jpg" alt="цветная картинка" class="color">
+            <img src="img/layouts/layouts-image-5.jpg" alt="обесцвеченая картинка" class="nocolor">
+          </div>
           <!-- /.layouts-card__image -->
           <div class="layouts-card__text">
             <span class="layouts-card__span">Парки</span>
-            <div class="line"></div>
             <span class="layouts-card__span">Сады</span>
-            <div class="line"></div>
             <span class="layouts-card__span">Горы</span>
-            <div class="line"></div>
             <span class="layouts-card__span">Озера</span>
-            <div class="line"></div>
             <span class="layouts-card__span">Рельефы местности</span>
-            <div class="line"></div>
             <span class="layouts-card__span">Участки</span>
           </div>
           <!-- /.layouts-card__text -->
-          <button class="layouts-card__button">Рассчитать стоимость</button>
+          <button class="layouts-card__button btn-open-request">Рассчитать стоимость</button>
           <!-- /.layouts-card__button -->
         </div>
         <!-- /.layouts-card -->
         <div class="layouts-card">
           <span class="layouts-card__title">Индивидуальные макеты</span>
           <!-- /.layouts-card__title -->
-          <div class="layouts-card__image"><img src="img/layouts/layouts-image-color-6.jpg" alt=""></div>
+          <div class="layouts-card__image layouts-card__image-sixth">
+            <img src="img/layouts/layouts-image-color-6.jpg" alt="цветная картинка" class="color">
+            <img src="img/layouts/layouts-image-6.jpg" alt="обесцвеченая картинка" class="nocolor">
+          </div>
           <!-- /.layouts-card__image -->
           <div class="layouts-card__text">
             <span class="layouts-card__span">Мы может воплотить в жизнь<br> любые идеи, с применением<br> высоких
@@ -235,7 +262,7 @@
               максимальной детализацией<br> и совершенно любых размеров</span>
           </div>
           <!-- /.layouts-card__text -->
-          <button class="layouts-card__button">Рассчитать стоимость</button>
+          <button class="layouts-card__button btn-open-request">Рассчитать стоимость</button>
           <!-- /.layouts-card__button -->
         </div>
         <!-- /.layouts-card -->
@@ -243,20 +270,21 @@
       <!-- /.layouts-cards -->
     </div>
     <!-- /.container -->
+    <a id="projects-end-anchor"></a>
   </section>
   <!-- /.section layouts -->
+
   <section class="section projects">
     <div class="container">
-      <div class="h1 section-title projects__title">Реализованные проекты</div>
+      <h2 class="section-title projects__title">Реализованные проекты</h2>
       <!-- /.h1 section-title prosects__title -->
-      <div class="line-big"></div>
       <h2 class="section-subtitle projects__subtitle">Более 100 компаний уже решают свои бизнес – задачи с помощью
         наших макетов</h2>
       <!-- /.section-subtitle prosects__subtitle -->
       <div class="slider owl-carousel" id="slider-1">
         <div class="slider__item">
           <div class="slider__wraps">
-            <div class="slider-image"><img src="img/projects/projects-image-1.png" alt=""></div>
+            <div class="slider-image"><img src="img/projects/projects-image-1.png" alt="макет проекта"></div>
             <div class="slider-text">
               <div class="slider-text__title">Порт Артек</div>
               <!-- /.sleder-text__title -->
@@ -282,7 +310,7 @@
                 <!-- /.sleder-text__parametrs-date -->
               </div>
               <!-- /.sleder-text__parametrs -->
-              <button class="button projects__button">Заказать макет</button>
+              <button class="button projects__button btn-open-request">Заказать макет</button>
               <!-- /.button projects__button -->
             </div>
             <!-- /.slider__text-->
@@ -291,7 +319,7 @@
         <!-- /.slider__item -->
         <div class="slider__item">
           <div class="slider__wraps">
-            <div class="slider-image"><img src="img/projects/projects-image-2.png" alt=""></div>
+            <div class="slider-image"><img src="img/projects/projects-image-2.png" alt="макет проекта"></div>
             <div class="slider-text">
               <div class="slider-text__title">Дом деревянный</div>
               <!-- /.sleder-text__title -->
@@ -328,103 +356,203 @@
       </div>
       <!-- /.slider -->
       <div class="arrows__left arrows">
-        <img src="img/projects/arrow-left-image.png" alt="">
+        <img src="img/projects/arrow-left-image.png" alt="стрелка влево">
       </div>
       <div class="arrows__right arrows">
-        <img src="img/projects/arrow-right-image.png" alt="">
+        <img src="img/projects/arrow-right-image.png" alt="стрелка вправо">
       </div>
     </div>
     <!-- /.comtainer -->
+    
   </section>
   <!-- /.section prosects -->
+
+  <a id="procurement-anchor"></a>
+
   <section class="section advantages">
     <div class="container">
-      <h1 class="section-title advantages__title">Все макеты, изготовленные нашей макетной мастерской,<br>
-        помогли клиентам выполнить поставленные цели, а именно:</h1>
+      <h2 class="section-title advantages__title">Все макеты, изготовленные нашей
+        макетной мастерской,<br>
+        помогли клиентам выполнить поставленные цели, а именно:</h2>
       <!-- /.section-title advantages__title -->
       <div class="advantages-cards">
         <div class="advantages-card">
-          <img src="img/advantages/advantages-image-1.png" alt="" class="advantages__image">
+          <img src="img/advantages/advantages-image-1.png" alt="иконка" class="advantages__image">
           <p class="advantages__text">Продать квартиру, дом,<br> участок, объект.</p>
           <!-- /.advantages__text -->
         </div>
         <!-- /.advantages-card -->
         <div class="advantages-card">
-          <img src="img/advantages/advantages-image-2.png" alt="" class="advantages__image">
+          <img src="img/advantages/advantages-image-2.png" alt="иконка" class="advantages__image">
           <p class="advantages__text">Привлечь инвестиции<br> в проект.</p>
           <!-- /.advantages__text -->
         </div>
         <!-- /.advantages-card -->
         <div class="advantages-card">
-          <img src="img/advantages/advantages-image-3.png" alt="" class="advantages__image">
+          <img src="img/advantages/advantages-image-3.png" alt="иконка" class="advantages__image">
           <p class="advantages__text">Наглядно представить объект<br>
             посетителю с целью ознакомления<br> с территорией, зданием.</p>
           <!-- /.advantages__text -->
         </div>
         <!-- /.advantages-card -->
         <div class="advantages-card">
-          <img src="img/advantages/advantages-image-4.png" alt="" class="advantages__image">
+          <img src="img/advantages/advantages-image-4.png" alt="иконка" class="advantages__image">
           <p class="advantages__text">Представить проект<br> первым лицам государства,<br> компании.</p>
           <!-- /.advantages__text -->
         </div>
         <!-- /.advantages-card -->
         <div class="advantages-card">
-          <img src="img/advantages/advantages-image-5.png" alt="" class="advantages__image">
+          <img src="img/advantages/advantages-image-5.png" alt="иконка" class="advantages__image">
           <p class="advantages__text">Обучение сотрудников,<br> военнослужащих, студентов<br> и т.д.</p>
           <!-- /.advantages__text -->
         </div>
         <!-- /.advantages-card -->
         <div class="advantages-card">
-          <img src="img/advantages/advantages-image-6.png" alt="" class="advantages__image">
+          <img src="img/advantages/advantages-image-6.png" alt="иконка" class="advantages__image">
           <p class="advantages__text">Получить разрешение<br> на строительство,<br> согласование проекта.</p>
           <!-- /.advantages__text -->
         </div>
         <!-- /.advantages-card -->
         <div class="advantages-card">
-          <img src="img/advantages/advantages-image-7.png" alt="" class="advantages__image">
+          <img src="img/advantages/advantages-image-7.png" alt="иконка" class="advantages__image">
           <p class="advantages__text">Бизнес подарок.</p>
           <!-- /.advantages__text -->
         </div>
         <!-- /.advantages-card -->
         <div class="advantages-card">
-          <img src="img/advantages/advantages-image-8.png" alt="" class="advantages__image">
+          <img src="img/advantages/advantages-image-8.png" alt="иконка" class="advantages__image">
           <p class="advantages__text">Дополнить интерьер.</p>
           <!-- /.advantages__text -->
         </div>
         <!-- /.advantages-card -->
       </div>
       <!-- /.advantages-cards -->
+      <a id="our-customers-anchor"></a>
     </div>
     <!-- /.container -->
   </section>
   <!-- /.section advantages -->
+
   <section class="section customers">
     <div class="container">
-      <h1 class="section-title customers__title">Наши клиенты</h1>
+      <h2 class="section-title customers__title">Наши клиенты</h2>
       <!-- /.section-title customers__title -->
       <div class="customers-box">
         <div class="customers-slider owl-carousel" id="slider-2">
-          <div class="customers-slider__item"><img src="img/customers/customers-image-1.png" alt=""></div>
-          <div class="customers-slider__item"><img src="img/customers/customers-image-2.png" alt=""></div>
-          <div class="customers-slider__item"><img src="img/customers/customers-image-3.png" alt=""></div>
-          <div class="customers-slider__item"><img src="img/customers/customers-image-4.png" alt=""></div>
-          <div class="customers-slider__item"><img src="img/customers/customers-image-5.png" alt=""></div>
+          <div class="customers-slider__item"><img src="img/customers/customers-image-1.png" alt="лого клиента"></div>
+          <div class="customers-slider__item"><img src="img/customers/customers-image-2.png" alt="лого клиента"></div>
+          <div class="customers-slider__item"><img src="img/customers/customers-image-3.png" alt="лого клиента"></div>
+          <div class="customers-slider__item"><img src="img/customers/customers-image-4.png" alt="лого клиента"></div>
+          <div class="customers-slider__item"><img src="img/customers/customers-image-5.png" alt="лого клиента"></div>
         </div>
       </div>
       <div class="arrows__left arrows customers__arrow-left" id="arrow-left-2">
-        <img src="img/customers/customers-arrow-left.png" alt="">
+        <img src="img/customers/customers-arrow-left.png" alt="стрелка влево">
       </div>
       <div class="arrows__right arrows customers__arrow-right" id="arrow-right-2">
-        <img src="img/customers/customers-arrow-right.png" alt="">
+        <img src="img/customers/customers-arrow-right.png" alt="стрелка вправо">
       </div>
     </div>
     <!-- /.container -->
   </section>
 
+  <div class="section map" id="map"></div>
+
+  <footer class="section footer">
+    <div class="container">
+      <div class="footer-block">
+        <div class="footer-adress">
+          <div class="footer-adress__icon">
+            <img src="img/footer/footer-map-icon.png" alt="иконка карты">
+          </div>
+          <div class="footer-adress__text"><a id="our-contacts-anchor"></a><a href="https://goo.gl/maps/nvsr5KtPay12">
+              г. Москва,<br>
+              Автомоторная улица, 4А, стр.21</a></div>
+        </div>
+        <!-- /.footer-adress -->
+        <div class="footer-contacts contacts">
+          <a href="tel:88008913333" class="contacts-phone footer-contacts__phone">8 800 891-33-33</a>
+          <a href="#" class="footer-contacts__link contacts-link btn-open-feedback">Заказать обратный звонок</a>
+        </div>
+        <!-- /.footer-contacts -->
+      </div>
+      <!-- /.footer-block -->
+    </div>
+    <!-- /.container -->
+  </footer>
+  <!-- /.section footer -->
+
+  <!-- модальное окно с формой feedback -->
+  <div class="feedback-wrap" id="feedback-wrap">
+    <div class="feedback-modal" id="feedback-modal">
+      <div class="feedback-content">
+        <button class="feedback-content__close" id="close1">&times;</button>
+        <h1 class="feedback-title">Оставьте ваши данные<br> и мы перезвоним вам<br> в течение <strong>5 минут!</strong>
+        </h1>
+        <form action="#" method="POST" class="feedback-form" id="feedback-form">
+          <input class="input feedback-form__input" type="text" name="name" id="feedback-name" required
+            placeholder="Ваше имя">
+          <input class="input feedback-form__input phone" type="tel" name="phone" id="feedback-phone" required
+            placeholder="Контактный телефон">
+          <button class="button feedback-form__button">Оставить заявку</button>
+        </form>
+        <div class="window-of-thanks__feedback">
+          Спасибо за заявку!<br> Мы перезваним вам в ближайшее время!
+        </div>
+      </div>
+      <!-- /.feedback-content -->
+    </div>
+    <!-- /.feedback-modal -->
+  </div>
+  <!-- /.feedback-wrap -->
+
+  <!-- модальное окно с формой request -->
+  <div class="request-wrap" id="request-wrap">
+    <div class="request-modal" id="request-modal">
+      <div class="request-content">
+        <button class="request-content__close" id="close2">&times;</button>
+        <h1 class="request-title">Оставьте ваши данные<br> и мы перезвоним вам<br> в течение <strong>5 минут!</strong>
+        </h1>
+        <form action="#" method="POST" class="request-form" id="request-form">
+          <input class="input request-form__input" type="text" name="name" id="request-name" required
+            placeholder="Ваше имя">
+          <input class="input request-form__input phone" type="tel" name="phone" id="request-phone" required
+            placeholder="Контактный телефон">
+          <input class="input request-form__input" type="email" name="email" id="request-email" required
+            placeholder="Электронная почта">
+          <button class="button request-form__button">Оставить заявку</button>
+        </form>
+        <div class="window-of-thanks__request">
+          Спасибо за заявку!<br> Мы перезваним вам в ближайшее время!
+        </div>
+      </div>
+      <!-- /.request-content -->
+    </div>
+    <!-- /.request-modal -->
+  </div>
+  <!-- /.request-wrap -->
+  <a href="#" class="scrollup">Наверх</a>
+
+  <!-- библиотека JQuery -->
   <script src="js/jquery-3.3.1.min.js"></script>
+  <!-- валидатор JQuery -->
+  <script src="js/jquery.validate.min.js"></script>
+  <!-- скрипт маски для телефона в форме -->
+  <script src="js/jquery.maskedinput.min.js"></script>
+  <!-- скрипт валидации и отправки данных форм -->
+  <script src="js/forms.js"></script>
+  <!-- скрипт бургер-меню -->
   <script src="js/menu.js"></script>
+  <!-- скрипт скролла наверх -->
+  <script src="js/scroll.js"></script>
+  <!-- скрипт модального окна -->
+  <script src="js/modal.js"></script>
+  <!-- библиотека OWL слайдера -->
   <script src="js/owl.carousel.min.js"></script>
+  <!-- другие скрипты и настройки-->
   <script src="js/scripts.js"></script>
+  <!-- загружаем карту по скроллу -->
+  <script src="js/maps.js"></script>
 </body>
 
 </html>
